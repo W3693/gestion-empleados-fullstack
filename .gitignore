@@ -1,0 +1,11 @@
+# Node modules
+node_modules/
+
+# Variables de entorno
+.env
+
+# Logs (opcional)
+*.log
+
+# Sistema (opcional)
+.DS_Store
