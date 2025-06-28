@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "685e8dedd3d708619a73d701"
+  },
+  "name": "Walter",
+  "position": "Backend Developer",
+  "office": "Medellín",
+  "salary": 3200,
+  "createdAt": {
+    "$date": "2025-06-27T12:26:21.633Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T12:26:21.633Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685e904fd9550829d72907ea"
+  },
+  "name": "Ana",
+  "position": "Scrum Master",
+  "office": "Cali",
+  "salary": 3500,
+  "createdAt": {
+    "$date": "2025-06-27T12:36:31.503Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T12:36:31.503Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685e90edd9550829d72907ed"
+  },
+  "name": "Laura",
+  "position": "Diseñadora UX",
+  "office": "Bogotá",
+  "salary": 2800,
+  "createdAt": {
+    "$date": "2025-06-27T12:39:09.349Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T12:39:09.349Z"
+  },
+  "__v": 0
+}]

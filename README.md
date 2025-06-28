@@ -12,6 +12,9 @@ Este proyecto es una API RESTful construida con **Node.js**, **Express** y **Mon
 │   ├── auth.controller.js
 │   ├── empleado.controller.js
 │   └── producto.controller.js
+├── data/
+│   ├── empleados.json
+│   └── usuarios.json
 ├── models/
 │   ├── empleado.js
 │   ├── producto.js
@@ -55,11 +58,15 @@ MONGO_URI=mongodb://localhost:27017/empleados
 JWT_SECRET=secreto123
 ```
 
-4. Ejecuta el servidor:
+4. Ejecuta el servidor: npm run dev
 
 ```bash
 node index.js
 ```
+
+## 📁 La carpeta /data 
+
+contiene archivos en formato .json que simulan el contenido de las colecciones empleados y usuarios. Estos archivos permiten poblar la base de datos de forma rápida, facilitando el desarrollo y la realización de pruebas locales.
 
 ---
 
@@ -148,6 +155,3 @@ Desarrollado por **Walter** como ejercicio pedagógico de backend con Node.js.
 
 ---
 
-Esto ya está listo para subir y lucirlo 💼 Si quieres, te puedo generar el archivo `.env.example` automáticamente y ayudarte a hacer tu primer `commit` limpio en Git con mensajes bien redactados.
-
-¿Quieres ese empujón final para ponerlo en GitHub? 🚀📁
