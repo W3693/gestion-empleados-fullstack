@@ -1,0 +1,92 @@
+<h4 class="center-align">GESTIÓN DE PRODUCTOS</h4>
+
+<div class="container">
+  <div class="row">
+
+    <!-- Formulario de productos -->
+    <div class="col s12 m5">
+      <div class="card">
+        <div class="card-content">
+          <form #productoForm="ngForm" (ngSubmit)="agregarProducto(productoForm)">
+            <input type="hidden"
+                   name="_id"
+                   [(ngModel)]="productoService.selectedProducto._id">
+
+            <div class="input-field">
+              <input type="text"
+                     name="nombre"
+                     [(ngModel)]="productoService.selectedProducto.nombre"
+                     required>
+              <label for="nombre">Nombre del producto</label>
+            </div>
+
+            <!-- Eliminado campo: Categoría -->
+
+            <div class="input-field">
+              <input type="number"
+                     name="precio"
+                     [(ngModel)]="productoService.selectedProducto.precio"
+                     required min="0">
+              <label for="precio">Precio</label>
+            </div>
+
+            <div class="input-field">
+              <input type="number"
+                     name="stock"
+                     [(ngModel)]="productoService.selectedProducto.stock"
+                     required min="0">
+              <label for="stock">Stock disponible</label>
+            </div>
+
+            <div class="input-field">
+              <textarea class="materialize-textarea"
+                        name="descripcion"
+                        [(ngModel)]="productoService.selectedProducto.descripcion"
+                        required minlength="5"></textarea>
+              <label for="descripcion">Descripción</label>
+            </div>
+
+            <div class="card-action center-align">
+              <button class="btn green" type="submit">Guardar</button>
+              <button class="btn grey" type="button" (click)="resetForm(productoForm)">Limpiar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lista de productos -->
+    <div class="col s12 m7">
+      <table class="highlight responsive-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <!-- Eliminado encabezado: Categoría -->
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of productoService.productos">
+            <td>{{ prod.nombre }}</td>
+            <!-- Eliminada columna: Categoría -->
+            <td>{{ prod.precio | currency:'COP' }}</td>
+            <td>{{ prod.stock }}</td>
+            <td>{{ prod.descripcion }}</td>
+            <td>
+              <button class="btn-small orange" (click)="editarProducto(prod)">
+                <i class="material-icons">edit</i>
+              </button>
+              <button class="btn-small red" (click)="eliminarProducto(prod._id)">
+                <i class="material-icons">delete</i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

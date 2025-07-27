@@ -1,15 +1,26 @@
-<nav class="nav-wrapper blue">
-
-<div class="container">
-
-<a href="/" class="brand-logo">GESTIÓN DE EMPLEADOS</a>
-
-</div>
-
+<!-- Barra de navegación superior -->
+<nav>
+  <div class="nav-wrapper deep-purple darken-2">
+    <a class="brand-logo" style="margin-left: 10px;">Admin Panel</a>
+    <ul class="right hide-on-med-and-down">
+      <li>
+        <a routerLink="/empleados">
+          <i class="material-icons left">group</i>Empleados
+        </a>
+      </li>
+      <li>
+        <a routerLink="/productos">
+          <i class="material-icons left">inventory_2</i>Productos
+        </a>
+      </li>
+      <li>
+        <a routerLink="/usuarios">
+          <i class="material-icons left">person</i>Usuarios
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
-<div class="container p-4">
-
-<app-empleados></app-empleados>
-
-</div>
+<!-- Aquí se muestran las vistas según la ruta activa -->
+<router-outlet></router-outlet>

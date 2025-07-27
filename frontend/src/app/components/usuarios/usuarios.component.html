@@ -1,0 +1,76 @@
+<!-- Título visible para confirmar renderizado -->
+<h4 class="center-align">GESTIÓN DE USUARIOS</h4>
+
+<!-- Contenedor principal de la vista -->
+<div class="container">
+  <div class="row">
+
+    <!-- Columna izquierda: formulario de usuarios -->
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+
+          <!-- Formulario para agregar o editar usuarios -->
+          <form #usuarioForm="ngForm" (ngSubmit)="agregarUsuario(usuarioForm)">
+
+            <!-- Campo oculto para el _id del usuario -->
+            <input type="hidden"
+                   name="_id"
+                   [(ngModel)]="usuarioService.selectedUsuario._id">
+
+            <!-- Campo: Nombre de usuario -->
+            <div class="input-field">
+              <input type="text"
+                     name="username"
+                     [(ngModel)]="usuarioService.selectedUsuario.username"
+                     placeholder="Nombre de usuario"
+                     required>
+            </div>
+
+            <!-- Campo: Contraseña -->
+            <div class="input-field">
+              <input type="password"
+                     name="password"
+                     [(ngModel)]="usuarioService.selectedUsuario.password"
+                     placeholder="Contraseña"
+                     required>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="card-action">
+              <button class="btn blue" type="submit">Guardar</button>
+              <button class="btn grey" type="button" (click)="resetForm(usuarioForm)">Limpiar</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: lista de usuarios -->
+    <div class="col s7">
+      <table class="highlight">
+        <thead>
+          <tr>
+            <th>Usuario</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Itera sobre la lista de usuarios -->
+          <tr *ngFor="let user of usuarioService.usuarios">
+            <td>{{ user.username }}</td>
+            <td>
+              <!-- Botón para editar -->
+              <button class="btn orange" (click)="editarUsuario(user)">Editar</button>
+
+              <!-- Botón para eliminar -->
+              <button class="btn red" (click)="eliminarUsuario(user._id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

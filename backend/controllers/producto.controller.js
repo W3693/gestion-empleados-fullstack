@@ -1,5 +1,4 @@
 const Producto = require('../models/producto');
-
 const productoCtrl = {};
 
 // Obtener todos los productos
@@ -12,10 +11,11 @@ productoCtrl.getProductos = async (req, res) => {
   }
 };
 
-// Crear un nuevo producto
-productoCtrl.createProducto = async (req, res) => {
+// Crear producto
+productoCtrl.crearProducto = async (req, res) => {
   try {
-    const producto = new Producto(req.body);
+    const { _id, ...datosLimpios } = req.body;
+    const producto = new Producto(datosLimpios);
     await producto.save();
     res.json({ status: 'Producto guardado', data: producto });
   } catch (error) {
@@ -27,35 +27,39 @@ productoCtrl.createProducto = async (req, res) => {
 productoCtrl.getProductoPorId = async (req, res) => {
   try {
     const producto = await Producto.findById(req.params.id).select('-__v -createdAt -updatedAt');
+    if (!producto) {
+      return res.status(404).json({ mensaje: 'Producto no encontrado' });
+    }
     res.json(producto);
   } catch (error) {
-    res.status(404).json({ mensaje: 'Producto no encontrado', error: error.message });
+    res.status(400).json({ mensaje: 'Error al obtener producto', error: error.message });
   }
 };
 
-// Actualizar un producto
-productoCtrl.editarProducto = async (req, res) => {
+// Actualizar producto (🛠️ campo 'descripcion' añadido)
+productoCtrl.actualizarProducto = async (req, res) => {
   try {
     const { id } = req.params;
-    const update = {
+    const productoEditado = {
       nombre: req.body.nombre,
-      descripcion: req.body.descripcion,
-      precio: req.body.precio
+      precio: req.body.precio,
+      stock: req.body.stock,
+      descripcion: req.body.descripcion // 👈 asegurado
     };
-    await Producto.findByIdAndUpdate(id, { $set: update }, { new: true });
+    await Producto.findByIdAndUpdate(id, { $set: productoEditado }, { new: true });
     res.json({ status: 'Producto actualizado' });
   } catch (error) {
-    res.status(400).json({ mensaje: 'Error al actualizar', error: error.message });
+    res.status(400).json({ mensaje: 'Error al actualizar producto', error: error.message });
   }
 };
 
-// Eliminar un producto
+// Eliminar producto
 productoCtrl.eliminarProducto = async (req, res) => {
   try {
     await Producto.findByIdAndDelete(req.params.id);
     res.json({ status: 'Producto eliminado' });
   } catch (error) {
-    res.status(400).json({ mensaje: 'Error al eliminar', error: error.message });
+    res.status(400).json({ mensaje: 'Error al eliminar producto', error: error.message });
   }
 };
 

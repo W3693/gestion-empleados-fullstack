@@ -12,10 +12,11 @@ empleadoCtrl.getEmpleados = async (req, res) => {
   }
 };
 
-// Crear empleados
+// Crear empleados (🛠️ corregido para ignorar _id)
 empleadoCtrl.createEmpleados = async (req, res) => {
   try {
-    const empleado = new Empleado(req.body);
+    const { _id, ...datosLimpios } = req.body; // ⛔️ Ignora _id si fue enviado
+    const empleado = new Empleado(datosLimpios);
     await empleado.save();
     res.json({ status: 'Empleado guardado', data: empleado });
   } catch (error) {
