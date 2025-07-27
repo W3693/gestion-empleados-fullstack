@@ -147,7 +147,7 @@ Incluimos un archivo `.env.example` en el repositorio para que otros desarrollad
 
 ## 👤 Autor
 
-Desarrollado por [**Walter**](https://github.com/W3693), como ejercicio técnico en integración fullstack.  
+Desarrollado por **Walter** como ejercicio pedagógico de backend con Node.js.
 
 
 
