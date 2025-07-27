@@ -120,7 +120,21 @@ Body (raw → JSON):
   "password": "123456"
 }
 ```
+---
 
+## ⚙️ Variables de entorno (`.env` y `.env.example`)
+
+Tu archivo `.env` debe estar en la raíz del proyecto y contener lo siguiente:
+
+```env
+PORT=3000
+MONGO_URI=mongodb://localhost:27017/empleados
+JWT_SECRET=secreto123
+```
+
+Incluimos un archivo `.env.example` en el repositorio para que otros desarrolladores puedan crear su propio `.env` fácilmente.
+
+---
 ---
 
 ## 🛡️ Seguridad
