@@ -1,9 +1,3 @@
-¡Excelente, Walter! Ya con tu usuario y el nombre del repositorio, podemos actualizar el README para incluir la URL oficial y dejar todo pulido y público para cualquier desarrollador que lo consulte.
-
-Aquí tienes el README completo, ajustado con tu usuario en GitHub 👇:
-
----
-
 # 🧰 Proyecto Fullstack: Gestión de Empleados, Productos y Usuarios
 
 Aplicación fullstack desarrollada con **Node.js**, **Express**, **MongoDB** y **Angular**. Este repositorio integra una API RESTful en el backend y una interfaz visual moderna en el frontend. Ideal para entrenar arquitectura modular, autenticación con JWT y gestión de entidades desde el backend hasta la UI.
@@ -136,7 +130,6 @@ Body (raw → JSON):
 Desarrollado por [**Walter**](https://github.com/W3693), como ejercicio técnico en integración fullstack.  
 Este repositorio refleja su estilo modular, documentación clara y pasión por la arquitectura profesional.
 
----
 
-¿Quieres que prepare también los badges visuales, una tabla de componentes Angular o el checklist simbólico para que el README tenga más impacto visual? Lo hacemos en segundos ⚡.
+
 
