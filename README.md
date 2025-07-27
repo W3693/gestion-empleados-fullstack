@@ -128,7 +128,6 @@ Body (raw → JSON):
 ## 👤 Autor
 
 Desarrollado por [**Walter**](https://github.com/W3693), como ejercicio técnico en integración fullstack.  
-Este repositorio refleja su estilo modular, documentación clara y pasión por la arquitectura profesional.
 
 
 
