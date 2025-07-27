@@ -1,111 +1,120 @@
-# 🛠️ API de Gestión de Empleados, Productos y Usuarios
+¡Excelente, Walter! Ya con tu usuario y el nombre del repositorio, podemos actualizar el README para incluir la URL oficial y dejar todo pulido y público para cualquier desarrollador que lo consulte.
 
-Este proyecto es una API RESTful construida con **Node.js**, **Express** y **MongoDB**. Fue creada con fines pedagógicos para comprender los fundamentos del backend, autenticación y manejo de rutas, modelos y controladores.
-
----
-
-## 📁 Estructura del Proyecto
-
-```
-📦 GESTION-EMPLEADOS
-├── controllers/
-│   ├── auth.controller.js
-│   ├── empleado.controller.js
-│   └── producto.controller.js
-├── data/
-│   ├── empleados.json
-│   └── usuarios.json
-├── models/
-│   ├── empleado.js
-│   ├── producto.js
-│   └── usuario.js
-├── routes/
-│   ├── auth.routes.js
-│   ├── empleado.routes.js
-│   └── producto.routes.js
-├── database.js
-├── index.js
-├── .env              # ← Variables locales (no se sube)
-├── .env.example      # ← Plantilla pública
-├── .gitignore        # ← Ignora node_modules, .env, logs, etc.
-├── package.json
-├── package-lock.json
-└── README.md
-```
+Aquí tienes el README completo, ajustado con tu usuario en GitHub 👇:
 
 ---
 
-## 🚀 Instalación
+# 🧰 Proyecto Fullstack: Gestión de Empleados, Productos y Usuarios
 
-1. Clona el repositorio:
+Aplicación fullstack desarrollada con **Node.js**, **Express**, **MongoDB** y **Angular**. Este repositorio integra una API RESTful en el backend y una interfaz visual moderna en el frontend. Ideal para entrenar arquitectura modular, autenticación con JWT y gestión de entidades desde el backend hasta la UI.
+
+🔗 Repositorio: [github.com/W3693/gestion-empleados-fullstack](https://github.com/W3693/gestion-empleados-fullstack)
+
+---
+
+## 🧠 Objetivos del Proyecto
+
+- Desarrollar una arquitectura fullstack escalable y organizada
+- Integrar autenticación, manejo de rutas, validaciones y simulación de datos
+- Usar Angular para crear una SPA con visualización clara y profesional
+- Aplicar buenas prácticas técnicas, visuales y documentales
+
+---
+
+## ⚙️ Tecnologías Utilizadas
+
+| Entorno    | Stack                       | Propósito                        |
+|------------|-----------------------------|----------------------------------|
+| Backend    | Node.js, Express, MongoDB   | API REST, lógica y persistencia  |
+| Seguridad  | JWT, bcryptjs               | Autenticación segura             |
+| Frontend   | Angular, TypeScript         | SPA con validaciones y UI moderna|
+| Dev Tools  | Postman, Git, Obsidian      | Pruebas, versionado, documentación|
+
+---
+
+## 🗂️ Estructura del Proyecto
+
+```txt
+📦 /GESTION-EMPLEADOS
+┣ 📁 backend            → API REST con Express y MongoDB
+┃ ┣ 📁 controllers      → Lógica de negocio para endpoints
+┃ ┣ 📁 routes           → Agrupación semántica de rutas REST
+┃ ┣ 📁 models           → Esquemas de datos (Mongoose)
+┃ ┣ 📁 data             → Simulación de colecciones locales (JSON)
+┃ ┣ 📄 database.js      → Conexión con MongoDB
+┃ ┣ 📄 index.js         → Punto de entrada (Express)
+┣ 📁 frontend           → Interfaz visual (integrada)
+┣ 📁 node_modules       → Dependencias del proyecto
+┣ ⚙️ .env               → Variables locales (no compartidas)
+┣ 📄 .env.example       → Plantilla pública para configuración
+┣ 📄 .gitignore         → Exclusión de archivos sensibles
+┣ 📄 package.json       → Dependencias y scripts
+┣ 📄 package-lock.json  → Versión exacta de paquetes
+┗ 📄 README.md          → Documentación y guía del proyecto
+---
+
+## 🚀 Instalación Local
+
+### 📦 Backend
 
 ```bash
-git clone https://github.com/tu-usuario/backend-api.git
-cd backend-api
-```
-
-2. Instala dependencias:
-
-```bash
+cd backend
 npm install
-```
-
-3. Crea tu archivo `.env` basado en `.env.example`:
-
-```env
-PORT=3000
-MONGO_URI=mongodb://localhost:27017/empleados
-JWT_SECRET=secreto123
-```
-
-4. Ejecuta el servidor: npm run dev
-
-```bash
+cp .env.example .env
 node index.js
 ```
 
-## 📁 La carpeta /data 
+> Requiere MongoDB local o Atlas. Configura las variables en `.env`.
 
-contiene archivos en formato .json que simulan el contenido de las colecciones empleados y usuarios. Estos archivos permiten poblar la base de datos de forma rápida, facilitando el desarrollo y la realización de pruebas locales.
+### 🎨 Frontend
+
+```bash
+cd frontend
+npm install
+ng serve
+```
+
+> Accede a `http://localhost:4200`
 
 ---
 
-## 📌 Endpoints disponibles
+## 📌 Endpoints API REST
 
 ### 🔑 Autenticación
 
-| Método | Ruta                   | Descripción                  |
+| Método | Ruta                   | Acción                       |
 |--------|------------------------|------------------------------|
-| POST   | `/api/auth/register`   | Registrar un nuevo usuario   |
-| POST   | `/api/auth/login`      | Iniciar sesión (JWT)         |
+| POST   | `/api/auth/register`   | Registrar usuario            |
+| POST   | `/api/auth/login`      | Iniciar sesión con JWT       |
 
 ### 👤 Empleados
 
-| Método | Ruta                 | Descripción                    |
-|--------|----------------------|--------------------------------|
-| GET    | `/api/empleados`     | Obtener todos los empleados    |
-| POST   | `/api/empleados`     | Crear nuevo empleado           |
-| PUT    | `/api/empleados/:id` | Actualizar empleado por ID     |
-| DELETE | `/api/empleados/:id` | Eliminar empleado por ID       |
+| Método | Ruta                 | Acción                        |
+|--------|----------------------|------------------------------|
+| GET    | `/api/empleados`     | Obtener lista                 |
+| POST   | `/api/empleados`     | Crear empleado                |
+| PUT    | `/api/empleados/:id` | Actualizar por ID             |
+| DELETE | `/api/empleados/:id` | Eliminar por ID               |
 
 ### 📦 Productos
 
-| Método | Ruta                 | Descripción                    |
-|--------|----------------------|--------------------------------|
-| GET    | `/api/productos`     | Obtener todos los productos    |
-| POST   | `/api/productos`     | Crear nuevo producto           |
-| PUT    | `/api/productos/:id` | Actualizar producto por ID     |
-| DELETE | `/api/productos/:id` | Eliminar producto por ID       |
+| Método | Ruta                 | Acción                        |
+|--------|----------------------|------------------------------|
+| GET    | `/api/productos`     | Obtener lista                 |
+| POST   | `/api/productos`     | Crear producto                |
+| PUT    | `/api/productos/:id` | Actualizar por ID             |
+| DELETE | `/api/productos/:id` | Eliminar por ID               |
 
 ---
 
 ## 🧪 Pruebas con Postman
 
-Puedes usar Postman para probar los endpoints. Aquí tienes un ejemplo para registrar un usuario:
+Ejemplo de registro:
 
-**POST** `http://localhost:3000/api/auth/register`  
-**Body (raw → JSON)**:
 ```json
+POST http://localhost:3000/api/auth/register
+
+Body (raw → JSON):
 {
   "username": "walter",
   "password": "123456"
@@ -114,44 +123,20 @@ Puedes usar Postman para probar los endpoints. Aquí tienes un ejemplo para regi
 
 ---
 
-## ⚙️ Variables de entorno (`.env` y `.env.example`)
+## 🛡️ Seguridad
 
-Tu archivo `.env` debe estar en la raíz del proyecto y contener lo siguiente:
-
-```env
-PORT=3000
-MONGO_URI=mongodb://localhost:27017/empleados
-JWT_SECRET=secreto123
-```
-
-Incluimos un archivo `.env.example` en el repositorio para que otros desarrolladores puedan crear su propio `.env` fácilmente.
+- Contraseñas encriptadas con `bcryptjs`
+- Tokens JWT para sesiones autenticadas
+- Frontend listo para implementar interceptores y protección visual
 
 ---
 
-## 🚫 Archivos ignorados (`.gitignore`)
+## 👤 Autor
 
-Para evitar subir archivos innecesarios o sensibles, se incluye un `.gitignore` con:
-
-```
-node_modules/
-.env
-*.log
-```
+Desarrollado por [**Walter**](https://github.com/W3693), como ejercicio técnico en integración fullstack.  
+Este repositorio refleja su estilo modular, documentación clara y pasión por la arquitectura profesional.
 
 ---
 
-## 💡 Notas
-
-- Este proyecto no implementa rutas protegidas para mantenerlo simple y didáctico.
-- Las contraseñas están encriptadas con `bcryptjs`.
-- Se utiliza `jsonwebtoken` para emitir tokens JWT tras el login.
-
----
-
-## 🧑‍💻 Autor
-
-Desarrollado por **Walter** como ejercicio pedagógico de backend con Node.js.
-```
-
----
+¿Quieres que prepare también los badges visuales, una tabla de componentes Angular o el checklist simbólico para que el README tenga más impacto visual? Lo hacemos en segundos ⚡.
 
