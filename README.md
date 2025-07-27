@@ -58,8 +58,13 @@ npm install
 cp .env.example .env
 node index.js
 ```
+ 🟢 El backend se ejecuta por defecto en:  
+> `http://localhost:3000`
 
-> Requiere MongoDB local o Atlas. Configura las variables en `.env`.
+> 🗄️ La base de datos utiliza MongoDB local, conectándose a:  
+> `mongodb://localhost:27017/empleados`
+
+> Asegúrate de tener **MongoDB en ejecución** antes de iniciar el servidor.
 
 ### 🎨 Frontend
 
