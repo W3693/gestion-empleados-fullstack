@@ -74,8 +74,8 @@ npm install
 ng serve
 ```
 
-> Accede a `http://localhost:4200`
-
+> 🌐 La aplicación Angular estará disponible en:  
+> `http://localhost:4200`
 ---
 
 ## 📌 Endpoints API REST
