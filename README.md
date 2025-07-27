@@ -45,6 +45,7 @@ Aplicación fullstack desarrollada con **Node.js**, **Express**, **MongoDB** y *
 ┣ 📄 package.json       → Dependencias y scripts
 ┣ 📄 package-lock.json  → Versión exacta de paquetes
 ┗ 📄 README.md          → Documentación y guía del proyecto
+```
 ---
 
 ## 🚀 Instalación Local
