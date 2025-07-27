@@ -144,11 +144,9 @@ Incluimos un archivo `.env.example` en el repositorio para que otros desarrollad
 - Frontend listo para implementar interceptores y protección visual
 
 ---
+## 🧑‍💻 Autor
 
-## 👤 Autor
-
-Desarrollado por **Walter** como ejercicio pedagógico de backend con Node.js.
-
+Desarrollado por **Walter** como ejercicio pedagógico fullstack (Angular + Node.js/Express + MongoDB), integrando buenas prácticas de arquitectura modular, rutas protegidas, documentación profesional y experiencia de usuario. El propósito es reforzar fundamentos de desarrollo backend, validación visual en frontend y sistematización técnica para futuros proyectos escalables.
 
 
 
